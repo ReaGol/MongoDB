@@ -1,0 +1,36 @@
+NoSQL -> Database -> Collection(list of entries) -> Document (looks like JSON)
+
+Actions in DB:
+-----------------------------------------------------------------------
+CRUD in MongoDB:
+Create = insert()
+Read = find() **is actually like filter
+Update = update() --> {$set:} will replace value of field
+Delete = delete()
+------------------------------------------------------------------------
+db.users.insertOne()
+db.users.insertMany()
+------------------------------------------------------------------------
+db.users.find({ name: 'reut'}) --> find all users named reut
+db.movies.find( { "awards.wins": { $gt: 100 } } ); //greater than
+db.users.find({ name: "reut"}, {name: 1, age: 1}) --> will return only the name and age fields
+db.users.find().forEach().pretty() --> iterate over data and make it easier to read
+db.users.find().sort({ name: 1 }).limit(2) --> sort by names alphabetically ascending, only show two names
+db.users.find().sort({ age: -1, name: 1 }).limit(2) --> sort by name ascending and age descending
+**find() -> only reference
+making changes is only using findOne()
+
+------------------------------------------------------------------------
+db.users.update() ---- {$set:}
+db.users.updateOne({$push})
+db.users.deleteOne({})
+
+
+
+
+
+
+
+
+
+    
