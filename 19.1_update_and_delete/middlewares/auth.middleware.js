@@ -1,0 +1,12 @@
+export const productAuth = (req, res, next) => {
+  //   req === object
+  //   res === object
+  // Do some Auth to product by the req.body
+  req.body.last = "Due";
+  // console.log('im in the middleware');
+  if (req.body.name === "Bob") {
+    res.send("Cannot do");
+    return;
+  }
+  next();
+};

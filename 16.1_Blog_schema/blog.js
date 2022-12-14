@@ -1,13 +1,21 @@
+import { MongoClient } from "mongodb";
+
+const connectionURL = "mongodb://127.0.0.1:27017";
+const dbName = "blog";
+
+const client = new MongoClient(connectionURL);
+const db = client.db(dbName);
+
 // User {
-//   "_id" : "ABC",
+//
 //   "name" : "Moshe Haim",
-//   "age" : 27, 
+//   "age" : 27,
 //   "email": moshe@gmail.com
-//   "posts": {"id": A, "id": B, "id": C}
+//   "posts": ["idA", "idB", "idC"]
 // }
 
 // Post {
-//   "_id" : "AB",
+//
 //   "title" : "Hello World",
 //   "text" : 'My first post',
 
@@ -16,8 +24,11 @@
 //   ]
 // }
 
-// Comment {
-//     [
-//      { "ObjectID('AAAA')", 'text' : 'blah', 'user_id' : 654321 },
-//    ]
-// }
+// Comment
+
+//   { 
+//    text : 'blah'
+//   }
+//  { 
+//    text : 'duh'
+//  }
